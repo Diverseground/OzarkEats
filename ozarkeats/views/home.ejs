@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OzarkEats</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+      integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+      crossorigin="anonymous"
+    />
+    <script src="https://kit.fontawesome.com/4074dbb482.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/stylesheets/home.css" />
+  </head>
+
+  <body class="d-flex text-center text-white bg-dark">
+    <div class="crossfade">
+      <figure></figure>
+      <figure></figure>
+      <figure></figure>
+      <figure></figure>
+      <figure></figure>
+    </div>
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      <header class="mb-auto">
+        <div>
+          <h3 class="float-md-left mb-0">OzarkEats</h3>
+          <nav class="nav nav-masthead justify-content-center float-md-right">
+            <a class="nav-link" href="/restaurants">Restaurants</a>
+            
+            <% if(!currentUser) { %>
+            <a class="nav-link" href="/login">Login</a>
+            <a class="nav-link" href="/register">Register</a>
+            <% } else { %>
+            <a href="/users/<%= currentUser._id %>" class="nav-link active user"><i class="fas fa-drumstick-bite"></i> <%= currentUser.username %> </a>
+            <a class="nav-link" href="/logout">Logout</a>
+            <% } %>
+            <form action="/restaurants/search" class="form-inline ps-1 nav-link d-flex input-group-sm" method="GET">
+              <input type="search" name="search" id="query" placeholder="Restaurant search..." class=" form-control  search">
+              <button class="btn input-group-sm btn-light" type="submit">Search
+              </button>
+        </form>
+          </nav>
+        </div>
+      </header>
+      <main class="px-3">
+        <div class="jumbotron">
+          <h1 class="display-4">Welcome to OzarkEats!</h1>
+          <p class="lead">
+            Locally grown food reviews, with a focus on the Ozarks.
+          </p>
+          <a
+          href="/restaurants"
+          class="btn btn-lg btn-outline-light font-weight-bold border-white"
+          >View Restaurants</a
+        >
+        </div>
+      </main>
+      <footer class="mastfoot mt-auto">
+        <div class="inner">
+          <p>
+            &copy; <%= new Date().getFullYear() %> OzarkEats, Inc.
+          </p>
+        </div>
+      </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+      integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+<% layout('layouts/boilerplate')%>
+        <div class="card my-4 px-4 py-4">
+      <form action="/register" method="POST" class="validated-form justify-content-center align-items-center" novalidate enctype="multipart/form-data">
+        <h1 class="card-title dark card py-2 text-center ">Register</h1>
+        <div class="row align-items-center justify-content-evenly">
+          
+          <div class="col-md-6 ">
+            <div class="mb-3">
+              <label class="form-label" for="username">Username</label>
+              <input class="form-control" type="text" id="username" name="user[username]" autofocus required />
+              <div class="valid-feedback">Looks good!</div>
+            </div>
+            <div class="mb-2">
+              <label class="form-label" for="email">Email</label>
+              <input class="form-control" type="email" id="email" name="user[email]" required />
+              <div class="valid-feedback">Looks good!</div>
+            </div>
+
+            <div class="mb-2">
+              <label class="form-label" for="password">Password</label>
+              <input class="form-control" type="password" id="password" name="password" required />
+              <div class="valid-feedback">Looks good!</div>
+            </div>
+            <div class="mb-2">
+              <label for="image">Profile Picture</label>
+              <input type="file" name="image" class="form-control" id="image" multiple required>
+            </div>
+          </div>
+          <div class="col-md-6 mb-5 pb1">
+              <div class="mb-2">
+                <label class="form-label" for="firstName">First Name</label>
+                <input class="form-control" type="text" id="title" name="user[firstName]" required />
+                <div class="valid-feedback">Looks good!</div>
+              </div>
+              <div class="mb-2">
+                <label class="form-label" for="lastName">Last Name</label>
+                <input class="form-control" type="text" id="lastName" name="user[lastName]" required />
+                <div class="valid-feedback">Looks good!</div>
+              </div>
+              <div class="mb-2">
+                <label class="form-label" for="bio">Tell us a little about you</label>
+                <textarea class="form-control" type="text" id="bio" name="user[bio]" required></textarea>
+                <div class="valid-feedback">Looks good!</div>
+              </div>
+            </div>
+
+            </div>
+            <div class="text-center">
+              <button class="btn btn-light btn-lg">Sign up</button>
+              <p>already a member? <a href="/login">Login</a></p>
+            </div>
+      </form>
+    </div>
+  </div>

@@ -1,0 +1,97 @@
+<% layout('layouts/boilerplate')%>
+<div class="row">
+  <div class="col-md-12">
+    <div
+      class="
+        navbar
+        justify-content-start
+        navbar-expand-lg navbar-dark
+        card-header
+      "
+    >
+      <div class="navbar-inner justify-content-start navbar-nav">
+        <div class="">
+          <ul class="nav justify-content-start">
+            <li class="nav-list-item me-2 h6">
+              <a class="nav-link" href="/users/<%= currentUser._id %> "
+                >Profile</a
+              >
+            </li>
+            <li class="nav-list-item me-2 h6">
+              <a class="nav-link active" href="/users">All Users</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="container d-flex row justify-content-start mt-50 mb-50"
+    id="users-container"
+  >
+    <div class="row">
+      <h1>All Users</h1>
+      <div class="col-md-8 col-lg-12 mx-auto">
+        <% if(!users || users.length < 1) {%>
+        <h1>No users available</h1>
+        <div class="card mb-3">
+          <div class="card-body">
+            <h5 class="card-title">No users available</h5>
+            <p class="card-text">
+              There are no users available at this time. Please check back
+              later.
+            </p>
+          </div>
+        </div>
+        <% } else { %> <% for (let user of users.docs){%>
+        <div class="card mb-3">
+          <div class="row">
+            <div class="col-md-4">
+              <%if(user.images.length) {%>
+              <img
+                class="img-fluid h-100 w-100"
+                alt=""
+                src="<%=user.images[0].url%>"
+              />
+              <% }else {%>
+              <img
+                class="img-fluid"
+                alt=""
+                src="https://res.cloudinary.com/douqbebwk/image/upload/v1600103881/YelpCamp/lz8jjv2gyynjil7lswf4.png"
+              />
+              <% } %>
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title"><%= user.username %></h5>
+                <p class="card-text"><%= user.bio.substring(0,95,) %>...</p>
+                <p class="card-text">
+                  <small class="text-muted"
+                    ><%= user.firstName %> <%= user.lastName %>
+                  </small>
+                </p>
+                <a class="btn btn-light" href="/users/<%=user._id%>"
+                  >View <%=user.username%></a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <% }%>
+      </div>
+      <% if(users.length > 1) {%>
+      <div class="text-center mb-5">
+        <a
+          href="/restaurants?page=<%= users.nextPage %>"
+          id="paginate"
+          class="btn btn-light"
+          >View More</a
+        >
+      </div>
+      <% } %> <% } %>
+    </div>
+  </div>
+
+  <script src="/javascripts/userPagination.js"></script>
+</div>

@@ -1,0 +1,141 @@
+<% layout('layouts/boilerplate')%>
+<div class="row justify-content-evenly align-items-center">
+  <h1 class="text-center">Editing Restaurant</h1>
+
+  <div
+    class="
+      card
+      col-md-6
+      offset-md-3
+      col-xl-6
+      offset-xl-0
+      justify-content-center
+      align-items-center
+    "
+  >
+    <div class="">
+      <div class="card-body">
+        <form
+          action="/restaurants/<%=restaurant._id%>?_method=PUT"
+          method="POST"
+          novalidate
+          class="validated-form"
+          enctype="multipart/form-data"
+        >
+          <div class="mb-3">
+            <label class="form-label" for="title">Title</label>
+            <input
+              class="form-control"
+              type="text"
+              id="title"
+              name="restaurant[title]"
+              value="<%=restaurant.title %>"
+              required
+            />
+            <div class="valid-feedback">Looks good!</div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="location">Location</label>
+            <input
+              class="form-control"
+              type="text"
+              id="location"
+              name="restaurant[location]"
+              value="<%=restaurant.location %>"
+              required
+            />
+            <div class="valid-feedback">Looks good!</div>
+          </div>
+
+          <div class="mb-3">
+            <label class="label" for="price">Restaurant Price</label>
+            <div class="mb-3">
+              <select name="restaurant[price]" id="price" class="form-select">
+                <option selected value="1">$</option>
+                <option value="2">$$</option>
+                <option value="3">$$$</option>
+                <option value="4">$$$$</option>
+                <option value="5">$$$$</option>
+              </select>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="description">Description</label>
+            <textarea
+              class="form-control"
+              type="text"
+              id="description"
+              name="restaurant[description]"
+              required
+            >
+<%= restaurant.description%></textarea
+            >
+            <div class="valid-feedback">Looks good!</div>
+          </div>
+          <div class="mb-3">
+            <label class="form-file-label" for="image">
+              <span class="form-file-text custom-file-label"
+                >Add more image(s)...</span
+              >
+            </label>
+            <div class="form-file custom-file">
+              <input
+                type="file"
+                class="form-file-input bs-custom-file-input form-control"
+                id="image"
+                name="image"
+                multiple
+              />
+            </div>
+          </div>
+          <div class="mb-3">
+            <div class="">Current Images</div>
+            <% restaurant.images.forEach(function(img, i) { %>
+
+            <div>
+              <img
+                src="<%=img.thumbnail %>"
+                class="img-thumbnail w-25"
+                alt=""
+              />
+              <div class="form-check-inline">
+                <input
+                  type="checkbox"
+                  id="image-<%=i%>"
+                  name="deleteImages[]"
+                  value="<%=img.filename%>"
+                  class="form-check-input"
+                />
+              </div>
+              <label class="form-check-label" for="image-<%=i%>">Delete?</label>
+            </div>
+            <% })%>
+          </div>
+          <div class="mb-3">
+            <button class="btn btn-light">Update Restaurants</button>
+          </div>
+        </form>
+        <a href="/restaurants/<%= restaurant._id%>">Back To Restaurants</a>
+      </div>
+    </div>
+  </div>
+  <div
+    class="
+      col-md-6
+      offset-md-3
+      col-xl-5
+      offset-xl-0
+      justify-content-center
+      align-items-center
+    "
+  >
+    <div class="">
+      <img
+        src="/images/undraw_eating_together_re_ux62.svg"
+        alt=""
+        srcset=""
+        class="img-fluid"
+      />
+    </div>
+  </div>
+</div>

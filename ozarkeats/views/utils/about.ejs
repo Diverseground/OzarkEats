@@ -1,0 +1,368 @@
+<% layout('layouts/boilerplate') %>
+<style>
+  .widget-list ol{  padding-left: 0;  list-style: none; }
+  .widget-list ol{  padding-left: 0;  list-style: none; color: #492F44; text-decoration: none;}
+  .widget-list li a{ color: #492F44; text-decoration: none; font-weight: 500;}
+  .widget-list li a:hover{ color: #FFB701;}
+  button a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  button a:hover {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .socials ol li a {
+    color: #FFB701;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 2rem;
+  }
+</style>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card mb-3">
+        <div class="card-header" id="top">
+          <div class="p-4 m-3 p-md-5 mb-4 text-white rounded dark">
+            <div class="col-md-6 px-0">
+              <h1 class="display-4 fst-italic">About OzarkEats</h1>
+              <p class="lead my-3">
+                <span class="fst-italic">OzarkEats</span> is a simple
+                application that allows users to create, edit, and delete
+                restaurants that are located right here in the
+                <span class="fst-italic">Ozarks</span>. It is a work in progress
+                but we are excited to see what you create!
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="row g-5">
+            <div class="col-md-8">
+              <article class="blog-post">
+                  <div class="navbar justify-content-center navbar-expand navbar-dark card-header">
+                    <div class="navbar-inner navbar-nav ">
+                      <div class="container-fluid">
+                        
+                        <ul class="nav justify-content-center mx-2 nav-list">
+                          <li class="nav-list-item"><a class="nav-link active " href="#posts">Posts</a></li>
+                          <li class="nav-list-item"><a class="nav-link active " href="#reviews">Reviews</a></li>
+                          <li class="nav-list-item"><a class="nav-link active " href="#contact">Contact</a></li>
+                          <li class="nav-list-item"><a class="nav-link active " href="#password">Password</a></li>
+                          <li class="nav-list-item"><a class="nav-link active " href="#maps">Map</a></li>
+                        </ul>
+                      </div>
+                    </div>
+
+                  </div>
+                <h2 class="blog-post-title pb-4 mb-4 fst-italic">
+                  Getting started tips from the developer
+                </h2>
+                <p class="blog-post-meta border-bottom">
+                  <span class="fst-italic">
+                    November 19, 2021 | Rogersville, Missouri
+                  </span>
+                  <br />
+                  By:
+                  <a href="#"><%= user.firstName %> <%= user.lastName %> </a>
+                </p>
+                <h3 class="blog-post-title" id="posts">Getting started and making posts</h3>
+                <p>
+                  To get started, you will need to create a <span class="fst-italic"><a href="/register">New User</a></span> account.
+                    Once you have created an account, you will be able to <span class="fst-italic"><a href="/login">Log In</a></span>
+                    and create, edit, and delete restaurants. You will also be
+                    able to view all of the restaurants that are currently
+                    available. You will also be able to view the reviews that
+                    have been written for each restaurant.
+
+                </p>
+                <hr />
+                <h3 class="blog-post-title">
+                  How to create a restaurant
+                </h3>
+                <p>
+                  To create a restaurant, you will need to log in.
+                  Once you are logged in, you will be able to click on the
+                  <span class="fst-italic"><a href="/restaurants/new">Create Restaurant</a></span> button
+                  and fill out the form. Once you have filled out the form,
+                  you will be able to click on the <span class="fst-italic">Submit</span>
+                  button. Once you have submitted the form, you will be
+                  redirected to the Restaurant's Show Page
+                  page.
+                </p>
+                <hr />
+                <h3 class="blog-post-title">
+                  How to edit a restaurant
+                </h3>
+                <p>
+                  To edit a restaurant restaurant you created, you will need to be logged in.
+                  Once you are logged in, you will be able to click on the <span class="fst-italic">Update</span> button under your listing
+                  and fill out the form. Once you have filled out the form,
+                  you will be able to click on the <span class="fst-italic">Update</span>
+                  button. Once you have submitted the form, you will be
+                  redirected to the <span class="fst-italic">Restaurant's Show</span>
+                  page.
+                </p>
+                <hr />
+                <h3 class="blog-post-title">
+                  How to delete a restaurant
+                </h3>
+                <p>
+                  To delete a restaurant you created, just click on the
+                  <span class="fst-italic">Delete</span> button located on the restaurant show page.
+                You will be
+                  redirected to the <span class="fst-italic"><a href="/restaurants">Restaurants</a></span>
+                  page.
+                </p>
+                <hr />
+                <h3 class="blog-post-title">
+                  How to view all restaurants
+                </h3>
+                <p>
+                  To view all restaurants, just click on the
+                  <span class="fst-italic"><a href="/restaurants">Restaurants</a></span> button
+                  and you will be
+                  redirected to the <span class="fst-italic">Restaurants</span>
+                  page.
+                </p>
+                <hr />
+                <h3 class="blog-post-title">
+                  How to view a restaurant
+                </h3>
+                <p>
+                  To view a restaurant, just click on the
+                  <a href="">View</a></span> button
+                  and you will be
+                  redirected to the <span class="fst-italic">Restaurant</span>
+                  page.
+                </p>
+                <hr />
+                <h3 class="blog-post-title" id="reviews">
+                  How to create a review
+                </h3>
+                <p>
+                  To create a review, you will need to be logged in.
+                  Once you are logged in, you will be able to click on the
+                  star rating and fill out the review field. 1 star is terrible, 5 stars is great.
+                    Once you have filled out the form, you will be able to click on the <span class="fst-italic">Submit</span>
+                </p>
+                <hr />
+                <h3 class="blog-post-title">
+                  How to delete a review
+                </h3>
+                <p>
+                  To delete a review, you will need to be logged in.
+                  Once you are logged in, you will be able to click on the
+                  <a href="">Delete</a></span> button
+                  and you will be
+                  redirected to the <span class="fst-italic">Restaurant</span>
+                  page.
+                </p>
+                <hr />
+                <h3 class="blog-post-title">
+                  Random restaurant feature
+                </h3>
+                <p>
+                This feature was added for those looking for quick and easy ways to find a restaurant when indecisive.
+                  To view a random restaurant, just click on the
+                  <a href="">Random</a></span> button
+                  and you will be
+                  redirected to a random <span class="fst-italic">Restaurant</span>
+                  page.
+                </p>
+                </article>
+                <hr>
+                <hr>
+                <article class="blog-post">
+                    <h2 class="blog-post-title pb-4 mb-4 fst-italic">
+                      Contact, Search, Password Reset and Email Verification
+                    </h2>
+                    <p class="blog-post-meta border-bottom">
+                      <span class="fst-italic">
+                        November 19, 2021 | Rogersville, Missouri
+                      </span>
+                      <br />
+                      By:
+                      <a href="#"><%= user.firstName %> <%= user.lastName %> </a>
+                    </p>
+                    <h3 class="blog-post-title" id="contact">Contact form</h3>
+                    <p>
+                        To reach out and send us a message we created a contact form.
+                        You can reach out to us by filling out the form and clicking on the <span class="fst-italic">Submit</span>
+                        button. We'll get back to you as soon as possible.
+
+                    </p>
+                    <hr />
+                    <h3 class="blog-post-title">
+                      Added a search feature
+                    </h3>
+                    <p>
+                        To search for a restaurant, you can either use the home page or the navigation menu to search for a restaurant.
+                        You can search for a restaurant by entering the name or the description of the restaurant in the search bar.
+
+                    </p>
+                    <hr />
+                    <h3 class="blog-post-title" id="password">
+                      Added password reset
+                    </h3>
+                    <p>
+                        To reset your password, you can click on the <span class="fst-italic">Reset link</span> on the login page.
+                        You will be redirected to the <span class="fst-italic">Forgot Password</span> page.
+                        Once you have filled out the form, you will be able to click on the <span class="fst-italic">Submit</span>
+                        button. Once you have submitted the form, you will be
+                        redirected to the <span class="fst-italic">Reset Password</span>
+                        page.
+                    </p>
+                    <hr />
+                    <h3 class="blog-post-title">
+                      Added email confirmation
+                    </h3>
+                    <p>
+                        To confirm your email, you can click "Verify Email" or paste the verification url in your search bar if your email doesn't support html.
+                        You will be redirected to the <span class="fst-italic">Confirm Email</span> page.
+                        Once you have clicked on the <span class="fst-italic">Verify Email</span>
+                        button or pasted and searched the url, you will be redirected to the <span class="fst-italic">About</span>
+                        page.
+                    </p>
+                    <hr />
+
+                </article>
+
+                <article class="blog-post">
+                    <h2 class="blog-post-title pb-4 mb-4 fst-italic" id="maps">
+                      Map navigation
+                    </h2>
+                    <p class="blog-post-meta border-bottom">
+                      <span class="fst-italic">
+                        November 19, 2021 | Rogersville, Missouri
+                      </span>
+                      <br />
+                      By:
+                      <a href="#"><%= user.firstName %> <%= user.lastName %> </a>
+                    </p>
+                    <h3 class="blog-post-title">
+                      How to use the all restaurants cluster map
+                    </h3>
+                    <p>
+                        To use the map to view all restaurants, you can zoom in and out on the map to show different areas and clusters. You can also click on the <span class="fst-italic">unclustered map points</span> to be taken to a restaurant.
+                    </p>
+                    <hr />
+                    <h3 class="blog-post-title">
+                      How to use the single restaurant map
+                    </h3>
+                    <p>
+                        To use the map to view a single restaurant, you can zoom in and out on the map
+                        to get a better view of the restaurant and quickly get to the restaurant.
+                    </p>
+                    <hr />
+                    <button class="btn btn-light btn-lg"><a href="#top"> Back to Top <i class="fas fa-long-arrow-alt-up"></i></a></button>
+
+                </article>
+
+
+
+            
+
+              
+            </div>
+
+            <div class="col-md-4">
+              <div class="position-sticky" style="top: 2rem">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">
+                      This app was built using the following technologies:
+                    </h4>
+                  </div>
+
+                  <div class="p-4">
+                    <ol class="list-unstyled mb-0 widget-list">
+                      <div class="">
+                        <li>
+                          <a href="https://nodejs.org/en//">Node.js</a>
+                        </li>
+                      </div>
+                      <div>
+                        <li>
+                          <a href="https://www.javascript.com/">JavaScript</a>
+                        </li>
+                      </div>
+                      <div>
+                        <li>
+                          <a href="https://getbootstrap.com/">Bootstrap</a>
+                        </li>
+                      </div>
+                      <div>
+                        <li>
+                          <a href="https://fontawesome.com/">Font Awesome</a>
+                        </li>
+                      </div>
+                      <div>
+                        <li>
+                          <a href="https://ejs.co/">Ejs</a>
+                        </li>
+                      </div>
+                      <div>
+                        <li>
+                          <a href="https://www.mongodb.com/">MongoDB</a>
+                        </li>
+                      </div>
+                      <div>
+                        <li>
+                          <a href="https://www.expressjs.com/">Express</a>
+                        </li>
+                      </div>
+                      <div>
+                        <li>
+                          <a href="https://www.npmjs.com/">NPM</a>
+                        </li>
+                      </div>
+                      <div>
+                        <li>
+                          <a href="https://www.heroku.com/">Heroku</a>
+                        </li>
+                      </div>
+                      <div>
+                        <li>
+                          <a href="https://www.git-scm.com/">Git</a>
+                        </li>
+                      </div>
+                      <div>
+                        <li>
+                          <a href="">Cloudinary</a>
+                        </li>
+                      </div>
+                      <div>
+                        <li>
+                          <h5>
+                            <a href="">
+                              And many more! Check out the source code for
+                              this</a
+                            >
+                          </h5>
+                        </li>
+                      </div>
+                    </ol>
+                  </div>
+
+                  <div class="p-4 socials">
+                    <h4 class="fst-italic">Where to find our other stuff</h4>
+                    <ol class="list-unstyled">
+                      <li class="mb-2"><a href="https://github.com/Diverseground"><i class="fab fa-github"></i> GitHub</a></li>
+                      <li class="mb-2"><a href="https://www.linkedin.com/in/frank-krogh-b9ba68203/"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                      <li class="mb-2"><a href="https://www.facebook.com/profile.php?id=100070822972986"><i class="fab fa-facebook-square"></i> Facebook</a></li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,137 @@
+body {
+  background-color: #ffe9b7;
+}
+#cluster-map {
+  width: 100%;
+  height: 500px;
+}
+
+#map {
+  width: 100%;
+  height: 300px;
+}
+@media only screen and (min-device-width: 280px) and (max-device-width: 653px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  #cluster-map {
+    height: 200px;
+  }
+  #map {
+    height: 250px;
+  }
+}
+
+@media only screen and (min-device-width: 425px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  #cluster-map {
+    height: 250px;
+  }
+  #map {
+    height: 275px;
+  }
+}
+
+@media only screen and (min-device-width: 400px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  #cluster-map {
+    height: 250px;
+  }
+  #map {
+    height: 275px;
+  }
+}
+
+@media only screen and (min-device-width: 350px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  #cluster-map {
+    height: 250px;
+  }
+  #map {
+    height: 275px;
+  }
+}
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {
+  #cluster-map {
+    height: 250px;
+  }
+  #map {
+    height: 275px;
+  }
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
+  #cluster-map {
+    height: 250px;
+  }
+  #map {
+    height: 275px;
+  }
+}
+@media only screen and (min-device-width: 340px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
+  #cluster-map {
+    height: 250px;
+  }
+  #map {
+    height: 275px;
+  }
+}
+
+@media only screen and (min-device-width: 800px) and (max-device-width: 1280px) and (-webkit-min-device-pixel-ratio: 1.5) {
+  #cluster-map {
+    height: 250px;
+  }
+  #map {
+    height: 275px;
+  }
+}
+
+.my-icon {
+  border-radius: 100%;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  color: white;
+  background: #d0b53b;
+}
+
+.navbar {
+  background-color: #ffb701;
+  padding: 10px;
+}
+.footer {
+  background-color: #ffb701;
+  padding: 10px;
+}
+
+.home-color {
+  color: #ffb701;
+}
+
+.navbar-brand {
+  color: #ff9d00;
+}
+h1 {
+  color: #fefefc;
+  text-shadow: rgba(0, 0, 0, 0.582) 0px 0px 3px;
+}
+
+.btn-light {
+  color: #fefefc;
+  background-color: #492f44;
+  border: #492f44;
+}
+.btn-light:hover {
+  transition: ease-in-out;
+  color: #492f44;
+  font-weight: 700;
+  background-color: #ffc600;
+  border: #fefefc;
+}
+.btn-light:focus {
+  color: #492f44;
+  background-color: #ffc600;
+  border: #c02b34;
+}
+
+.white {
+  background-color: white;
+}
+.dark {
+  background-color: #492f44;
+}

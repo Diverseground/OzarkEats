@@ -1,0 +1,142 @@
+<% layout('layouts/boilerplate')%>
+<div class="row">
+  <div class="col-md-12">
+    <div
+      class="
+        navbar
+        justify-content-start
+        navbar-expand-lg navbar-dark
+        card-header
+      "
+    >
+      <div class="navbar-inner justify-content-start navbar-nav">
+        <div class="">
+          <ul class="nav justify-content-start">
+            <li class="nav-list-item me-2 h6">
+              <a class="nav-link active" href="/users/<%= user.id %> "
+                >Profile</a
+              >
+            </li>
+            <li class="nav-list-item me-2 h6">
+              <a class="nav-link" href="/users">All Users</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row py-1 mb-5 justify-content-start px-1">
+  <div class="col-xl-4 col-md-6 justify-content-start col-sm-10">
+    <div class="white shadow rounded overflow-hidden">
+      <div class="px-4 pt-0 mb-3 pb-4 dark">
+        <h1 class="text-white pt-2 mb-5 text-start">
+          <%= user.username %>'s Profile
+        </h1>
+        <div
+          class="
+            media
+            align-items-center
+            mb-1
+            justify-content-center
+            profile-header
+          "
+        >
+          <div
+            class="
+              profile
+              justify-content-evenly
+              text-center
+              align-items-center
+              mb-3
+              ms-3
+            "
+          >
+            <% if(user.images){ %>
+            <img
+              src="<%= user.images[0].url %> "
+              alt="..."
+              width="250"
+              class="
+                rounded
+                mb-2
+                justify-content-evenly
+                align-items-center
+                text-center
+                img-fluid img-thumbnail
+              "
+            />
+            <% } %>
+          </div>
+          <div class="media-body mb-1 text-white">
+            <h4 class="mt-0 px-3 mb-1">
+              <%= user.firstName %> <%= user.lastName %>
+            </h4>
+            <% if(currentUser && user._id.equals(currentUser._id)) { %>
+            <a
+              href="/users/<%= user._id %>/edit"
+              class="btn btn-outline-light px-3 ms-3 mt-1 btn-sm btn-block"
+              >Edit profile</a
+            >
+            <form action="/users/<%=user._id%>?_method=DELETE" method="POST">
+              <input
+                type="submit"
+                class="btn btn-danger px-3 ms-3 mt-1 btn-sm btn-block"
+                value="Delete Profile"
+              />
+            </form>
+            <% } %>
+          </div>
+        </div>
+      </div>
+      <div class="py-1 px-4">
+        <div class="py-4">
+          <h5 class="mb-3">About</h5>
+          <div class="p-4 bg-light text-wrap rounded shadow-sm">
+            <p class="font-italic text-wrap mb-0">
+              <%= user.bio.substring(0,42) %>...
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-8 col-md-6 justify-content-start col-sm-10">
+    <div class="white shadow rounded overflow-hidden">
+      <div class="px-4 pt-0 mb-3 pb-4 dark">
+        <h2 class="text-white pt-2 text-start">Postings</h2>
+      </div>
+      <div class="py-1 px-4">
+        <div class="py-4">
+          <h5 class="mb-3">Recent restaurants and Reviews</h5>
+          <div class="p-4 bg-light rounded shadow-sm">
+            <% for( let restaurant of restaurants.slice(-5)) { %>
+            <div class="row">
+              <div class="col-md-4 col-sm-6">
+                <img
+                  src="<%= restaurant.images[0].url %>"
+                  alt="..."
+                  class="img-thumbnail"
+                />
+              </div>
+              <div class="col-md-8">
+                <h5><%= restaurant.title %></h5>
+                <p><%= restaurant.description.substring(0, 50) %>...</p>
+                <p>
+                  <a
+                    href="/restaurants/<%= restaurant.id %>"
+                    class="btn btn-light px-3 ms-3 mt-1 btn-sm btn-block"
+                    >View</a
+                  >
+                </p>
+              </div>
+            </div>
+            <hr />
+            <% } %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
